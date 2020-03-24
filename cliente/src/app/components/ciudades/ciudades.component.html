@@ -1,0 +1,89 @@
+<div class="contenedorciudades" style="width:100%;">
+    <div class="col-md-12 text-center" style="color:white;">
+        <br>
+        <span class="titulociudad" >COUNTRY/CITIES</span>
+    </div>
+    <br>
+    <div class="container-fluid cities-window">
+        <!----------------    MENSAJE PARA NO HALLADOS    -------------------------->
+        <div *ngIf="mensajecard" class="app-paises">
+                <div class="text-center p-1 " >
+                    <div class="card text-center m-auto bg-dark" style="width: 11rem;">
+                        <div class="card-body  bg-dark text-warning">
+                            <h6 class="card-text"> No results for your search...!!!! </h6>
+                        </div>
+                        <div class="container bg-dark">
+                            <img src="../../../assets/img/CLEANER.png" width="100%" height="90" >
+                        </div>
+                        <div class="card-body  bg-dark  text-warning">
+                            <h6 class="card-text">Search must be about code or name of cities.</h6>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <!----------------------------------------------------------------------->
+        <div *ngIf="bypaises" class="app-paises">
+            <div class="text-center p-1 " *ngFor="let paises of data; let i = index">
+                <div class="card text-center m-auto p-1 bg-dark" style="width: 11rem;">
+                    <div class="container bg-dark">
+                        <br>
+                            <h5 class="card-text text-warning">{{paises.name}} </h5>
+                        <img src="{{paises.flag}}" width="90" height="50" alt="...">
+                    </div>
+                    <div class="card-body  bg-dark text-white text-left p-1">
+                            <span class="card-text">Capital: {{paises.capital}} </span><br>
+                            <span class="card-text">Code: {{paises.alpha2Code}} </span><br>
+                            <span class="card-text">Region: {{paises.region}} </span><br>
+                            <span class="card-text">Sub-Region: {{paises.subregion}} </span><br>
+                            <span class="card-text">Lat: {{paises.latlng[0]|number:'1.2-2'}} </span>
+                            <span class="card-text">Lon: {{paises.latlng[1]|number:'1.2-2'}} </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="byciudades" class="app-paises">
+            <div class="text-center p-1 bg-dark" *ngFor=" let ciudades of datafinal;">
+                <div class="card text-center m-auto p-1  bg-dark " style="width: 11rem;">
+                    <div class="container  bg-dark">
+                        <img src="{{ciudades.flag}}" width="100" height="60" alt="..."style="border:1px solid white;">
+                    </div>
+                    <div class="card-body bg-dark">
+                        <h6 class="card-text text-white">{{ciudades.nombreciudad}} </h6>
+                        <div class="text-left">
+                            <span class="card-text">Code City:<p class="text-white">{{ciudades.codeciudad}}</p> </span>
+                            <span class="card-text">Code Country:<p class="text-white">{{ciudades.codepais}}</p> </span>
+                            <span class="card-text">Name Country:<p class="text-white"> {{ciudades.namepais}}</p></span>
+                            <span class="card-text">Capital Country:<p class="text-white"> {{ciudades.capitalpais}}</p></span>
+                            
+                            <span class="card-text">Calling Code:<p class="text-white"> {{ciudades.callingcodes}}</p></span>
+                            <span class="card-text">Region Country:<p class="text-white">{{ciudades.region}}</p></span>
+                            <span class="card-text">SubRegion:<p class="text-white">{{ciudades.subregion}}</p> </span>
+                            <span class="card-text">Region Acron:<p class="text-white">{{ciudades.regionalacron}}</p></span>
+                           
+                            <span class="card-text">Region Name:<p class="text-white"> {{ciudades.regionalname}}</p></span>
+                            <span class="card-text">Latitud / Longitud:<p class="text-white">{{ciudades.lat}} , {{ciudades.lon}}</p> </span>
+                            <span class="card-text">Time Zones:<p class="text-white">{{ciudades.timezones}}</p> </span><br>
+                            
+                        </div>
+                    </div>
+                     <hr>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div *ngIf="verinput"class="col-md-12 text-center">
+                    <input id="btn-input" type="text" class="form-control-short text-left" name="ciudades" (KeyUp.enter)="searchCiudades($event)" placeholder="Code || Name Ciudad" />
+            </div>
+            <div *ngIf="linkregresar"class="col-md-12 text-center">
+                    <a (click)="regresar()"class="text-success"title="Back/Refresh"><i class="fas fa-2x fa-undo-alt"></i></a>
+            </div> 
+        </div>
+        
+        
+    </div>
+</div>

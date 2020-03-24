@@ -1,0 +1,36 @@
+.notas {
+    font-size: 1,1rem;
+    font-family: Tahoma, sans-serif, Verdana, Geneva;
+    margin-top: 3px
+}
+
+.bordernotas {
+    border: 2px outset rgb(168, 164, 164);
+    border-radius: 15px 15px 15px 15px;
+    height: 120px;
+    overflow-y: auto;
+    background-color:rgb(217, 239, 241);
+    margin: 2px auto;
+    opacity: 0.80
+}
+
+.titulo{
+    height:55px;
+    font-family:cursive;
+    font-size:1.2rem;
+    color:rgb(31, 45, 241)
+}
+.usuario {
+    color: yellow;
+    font-size: 14px;
+    font-family: tahoma;
+}
+.daterecord{
+    margin-top:0px;
+    height:60px;
+}
+
+.oculto{
+    color:transparent;
+    font-size:3px;
+}

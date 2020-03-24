@@ -1,0 +1,34 @@
+<div class="row text-center">
+   
+        <div class="card"  style="margin-top:25%;width:500px;">
+            <div class="card-header">
+                <h3>New Note!!!</h3>
+                <div class="card-body">
+                    <form [formGroup]="formaNote"(ngSubmit)="enviarFormNote(formaNote)">
+                        <div class="form-group">
+                            <input 
+                            id="titulonote"
+                            class="form-control" 
+                            name="title" 
+                            placeholder="Title"
+                            formControlName="titlenote"
+                            minlength="5"
+                            required
+                            autofocus>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="description"name="descriptionnote" class="form-control"
+                            placeholder="Description" formControlName="descriptionnote" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary btn-block" type="Submit">Send</button>
+                        </div> 
+                        <div *ngIf="adicionado"class="container">
+                            <p class="text-success text-center">Added successfully!!!</p>
+                        </div> 
+                    </form>
+                </div>
+            </div>
+        
+    </div>
+</div>

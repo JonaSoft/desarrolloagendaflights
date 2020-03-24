@@ -1,0 +1,37 @@
+
+<div class="row">
+    <div class="col-lg-12 col-md-4 "style="width:100%;align-items:center;height:700px;overflow-y: auto;">
+        <div  *ngFor="let notes of allnotes;let i = index;"class="card  my-3"style="float:left;width:250px;min-height:320px;margin:2px;padding:2px;">
+            <div class="card-body" style="width:100%;min-height:280px;">
+                <div class="container-fluid ">
+                    <div class="row">
+                        <div class="col-md-9 titulo">
+                        <span id="title"class="card-title d-flex justify-content-left">{{notes.title}}</span> 
+                        </div>
+                        <div class="col-md-3 text-right">
+                            <a (click)="editarNota(i)"class="text-success"type="hidden" title="Edit"><i class="fas fa-pencil-alt"></i></a> 
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container bordernotas">
+                    <p class="notas">{{notes.description}}</p> 
+                </div>
+                <div class="daterecord">
+                    <span>Date Record:</span><p class="text-primary ">{{notes.date}}</p>
+                    <span id="idnote"class="oculto p-0 mt-0" type="text" #idnota>{{notes._id}}</span>
+                    <!--<input type= "hidden"  id="_id" class="mt-0"name="name"#name="ngModel" [(ngmodel)]="dataService.selectedNote.name">-->
+
+                </div>
+               
+                <div>
+                    <button (click)="eliminarNota(notes._id)"class="btn btn-danger btn-block"
+                     type="button"
+                     title="Delete">
+                    <i class="fas fa-trash-alt"></i>
+                    </button>      
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

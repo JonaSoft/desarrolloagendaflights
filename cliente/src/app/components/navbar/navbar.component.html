@@ -1,0 +1,63 @@
+<div class="container-fluid fondonavbar">
+    <!--<div class="row">
+        <div class="col-lg-3 col-sm-12" style="padding:5px;">
+            <img src="./assets/img/favicon.ico" class="rounded" width="35" height="30" alt=""> <span class="margenes"> Code Share Support </span>
+
+        </div>
+        <div class="col-lg-5  col-sm-12 container d-flex justify-content-end" style="padding:5px;">
+
+
+        </div>
+        <div class="col-lg-4 col-sm-12 container d-flex justify-content-end">
+            <ul class="nav justify-content-end mt-1">
+
+                <li class="nav-item">
+                    <a [ngClass]="activo" id='home' class="nav-item nav-link  " (click)="activo ='estilomenuinicio'" [routerLink]="['/home']">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a [ngClass]="activo" id='upload' class="nav-item nav-link active ml-2 " (click)="activo ='estilomenuinicio'" [routerLink]="['/upload']">Upload</a>
+                </li>
+
+                <li class="nav-item">
+                    <a [ngClass]="activo" (click)="logout()" href="#" class=" nav-item nav-link " type="text">Logout</a>
+                </li>
+
+            </ul>
+
+            <img src="../../../assets/img/usuarioblack.png" class="rounded-circle m-2" width="25" height="25" alt="">
+            <span class="textousuario text-left mt-3">  {{ this.usuario}}</span>
+        </div>
+    </div>-->
+    <nav class="navbar navbar-expand-lg   navbar-dark ">
+        <button class="navbar-toggler" type="button  text-white btn-white" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <img src="./assets/img/favicon.ico" class="rounded" width="30" height="30" alt=""> <span class="margenes m-2"> Code Share Support </span>
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                <li class="nav-item ">
+                    <a class="nav-link estilomenu" [routerLink]="['/home']">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                      <span class="ml-auto"  style="font-family:Cursive;color:yellow;"> {{ this.usuario}}</span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" [routerLink]="['/home']">Home</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item"[routerLink]="['/home/allnotes']">All Notes</a>
+                      <a class="dropdown-item"[routerLink]="['/home/addnote']">Add Note</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" [routerLink]="['/home/calendar']">Calendar</a>
+                      </div>
+                </li>
+
+                <li class="nav-item">
+                    <a (click)="logout()" class="nav-link estilomenu" href="#">Logout</a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</div>

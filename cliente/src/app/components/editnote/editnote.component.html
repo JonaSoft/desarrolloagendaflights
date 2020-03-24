@@ -1,0 +1,42 @@
+<div class="row text-center">
+    <div class="card"  style="margin-top:25%;width:500px;">
+        <div class="card-header">
+            <h3>Edit Note</h3>
+            <div class="card-body">
+                <form (ngSubmit)="noteEdit(formanote)" #formanote="ngForm">
+
+                    <div class="form-group">
+                        <span id="idnote"class="oculto p-0 mt-0" type="text">{{note._id}}</span>
+                        <input 
+                        id="titlenote"
+                        class="form-control" 
+                        type="text"
+                        name="title" 
+                        [ngModel] = note.title
+                        required
+                        autofocus>
+                    </div>
+                    <div class="form-group">
+                        <textarea
+                            id="description"
+                            name="descriptionnote"
+                            class="form-control"
+                            [ngModel] = note.description
+                            required
+                        ></textarea>
+                    </div>
+                   
+                    <div class="form-group">
+                        
+                        <button class="btn btn-warning btn-block" type="submit">Update</button>
+                    </div> 
+                  
+                    <div *ngIf="editado"class="container">
+                        <p class="text-success text-center">Edited successfully!!!</p>
+                    </div> 
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

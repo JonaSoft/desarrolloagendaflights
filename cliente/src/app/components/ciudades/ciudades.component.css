@@ -1,0 +1,47 @@
+.contenedorciudades {
+    /*border: 3px outset #0B173B;*/
+    width: 100%;
+    max-width: 300px;
+    min-width: 220px;
+    height: 820px;
+    background: #0B173B;
+    color: rgb(247, 241, 241);
+    font-family: cursive;
+    font-size: 12px;
+    border-radius: 5px 5px 5px 5px;
+    margin: auto;
+    padding: 3px;
+    opacity: 0.85;
+}
+
+.cities-window {
+    min-width: 210px;
+    height: 700px;
+    overflow: hidden;
+    border: 3px outset gray;
+    border-radius: 20px;
+    padding: 0px;
+    background:white;
+    opacity:0.85;
+    color: black;
+    border-radius: 5px 5px 5px 5px
+}
+
+.app-paises {
+    overflow-y: scroll;
+    height: 712px;
+    padding: 2px;
+    font-family: cursive;
+    font-size: 14px;
+    color  :rgba(240, 157, 2, 0.993)
+}
+input {
+    text-transform: uppercase;
+    font-size: 13px;
+    width :100%;
+    border-radius:5px 5px 5px 5px;
+    font-family: tahoma
+}
+.titulociudad{
+font-size:1rem;
+}
